@@ -66,6 +66,7 @@ public class v40955_amogus_mod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.RED_AMOGUS);
+            event.accept(ModItems.AMOGUS_SPAWN_EGG);
         }
 
     }
