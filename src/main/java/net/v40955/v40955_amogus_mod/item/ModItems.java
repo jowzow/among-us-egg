@@ -11,6 +11,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, v40955_amogus_mod.MOD_ID);
     public static final RegistryObject<Item>RED_AMOGUS = ITEMS.register("red_amogus",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item>AMOGUS_SPAWN_EGG = ITEMS.register("amogus_spawn_egg",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
