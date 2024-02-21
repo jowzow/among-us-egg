@@ -22,6 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.v40955.v40955_amogus_mod.item.ModItems;
+import net.v40955.v40955_amogus_mod.loot.MobLootModifiers;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -42,6 +43,9 @@ public class v40955_amogus_mod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+
+
+        MobLootModifiers.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);
