@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "v40955_amogus_mod:item/amogus_spawn_egg"
+  }
+}
