@@ -3,6 +3,7 @@ package net.v40955.v40955_amogus_mod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -21,6 +22,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.v40955.v40955_amogus_mod.entity.ModEntities;
+import net.v40955.v40955_amogus_mod.entity.client.AmogusRenderer;
+import net.v40955.v40955_amogus_mod.event.ModEventBusEvents;
 import net.v40955.v40955_amogus_mod.item.ModItems;
 import net.v40955.v40955_amogus_mod.loot.MobLootModifiers;
 import org.slf4j.Logger;
@@ -52,6 +56,8 @@ public class v40955_amogus_mod
 
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModEntities.register(modEventBus);
 
 
         modEventBus.addListener(this::addCreative);
@@ -90,6 +96,7 @@ public class v40955_amogus_mod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.AMOGUS.get(), AmogusRenderer::new);
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());

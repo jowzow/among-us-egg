@@ -1,6 +1,8 @@
 package net.v40955.v40955_amogus_mod.item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
+import net.v40955.v40955_amogus_mod.entity.ModEntities;
 import net.v40955.v40955_amogus_mod.v40955_amogus_mod;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +14,8 @@ public class ModItems {
     public static final RegistryObject<Item>RED_AMOGUS = ITEMS.register("red_amogus",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item>AMOGUS_SPAWN_EGG = ITEMS.register("amogus_spawn_egg",
-            () -> new Item(new Item.Properties()));
+            () -> new ForgeSpawnEggItem(ModEntities.AMOGUS, 0x7e9680, 0xc5d1c5,
+                    new Item.Properties()));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
